@@ -1,0 +1,9 @@
+{
+  "name": "vue-template",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "haoxins/vue-template",
+  "author": "haoxin",
+  "license": "MIT"
+}
