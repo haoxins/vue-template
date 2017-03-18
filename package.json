@@ -2,7 +2,7 @@
   "name": "vue-template",
   "private": true,
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "meta.json",
   "repository": "haoxins/vue-template",
   "author": "haoxin",
   "license": "MIT"
