@@ -1,5 +1,4 @@
 {
-  "plugins": ["transform-object-rest-spread"],
   "presets": [
     ["env", {
       "targets": {
@@ -11,6 +10,16 @@
       "exclude": [
         "transform-regenerator"
       ]
+    }]
+  ],
+  "plugins": [
+    "transform-object-rest-spread",
+    ["module-resolver", {
+      "root": [],
+      "alias": {
+        "com": "./component",
+        "css": "./cssbase"
+      }
     }]
   ]
 }

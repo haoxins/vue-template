@@ -1,6 +1,6 @@
 
 <template>
-  <main>{{message}}</main>
+  <main>{{ msg }}</main>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
   name: 'app',
   data() {
     return {
-      message: 'hello'
+      msg: 'bingo'
     }
   }
 }
