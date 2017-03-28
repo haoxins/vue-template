@@ -7,7 +7,10 @@
     "build": "NODE_ENV=production webpack --config webpack.pro.js"
   },
   "dependencies": {
-    "vue": "2"
+    "rxjs": "5",
+    "vue": "2",
+    "vue-duo": "0",
+    "vue-rx": "3"
   },
   "devDependencies": {
     "babel-core": "6",
@@ -17,6 +20,7 @@
     "babel-preset-env": "1",
     "css-loader": "0",
     "eslint-config-ok": "github:haoxins/eslint-config",
+    "express": "4",
     "extract-text-webpack-plugin": "2",
     "file-loader": "0",
     "postcss-cssnext": "2",
