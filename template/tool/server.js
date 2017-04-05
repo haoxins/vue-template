@@ -1,4 +1,6 @@
 
+process.env.NODE_ENV = 'development'
+
 const config = require('./webpack.dev')
 const express = require('express')
 const webpack = require('webpack')

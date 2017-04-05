@@ -1,12 +1,16 @@
 
-const { resolve } = require('path')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+const { distPath } = require('./config')
+
+const env = process.env.NODE_ENV
 
 module.exports = {
   entry: {
     app: './main.js'
   },
   output: {
-    path: resolve(__dirname, '../dist'),
+    path: distPath,
     publicPath: '/dist/',
     filename: '[name].js'
   },
@@ -18,7 +22,8 @@ module.exports = {
         postcss: [
           require('postcss-import')(),
           require('postcss-cssnext')()
-        ]
+        ],
+        loaders: getVueLoaders()
       }
     }, {
       test: /\.js$/,
@@ -31,5 +36,29 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js'
     },
     extensions: ['.js', '.vue']
+  },
+  devtool: '#source-map'
+}
+
+/**
+ * private
+ */
+
+function getVueLoaders() {
+  if (env === 'production') {
+    return {
+      css: ExtractTextPlugin.extract({
+        use: [{
+          loader: 'css-loader',
+          options: {
+            sourceMap: true,
+            minimize: true
+          }
+        }],
+        fallback: 'style-loader'
+      })
+    }
   }
+
+  return {}
 }
