@@ -1,5 +1,5 @@
 
-import App from './component/app'
+import App from 'com/app'
 import Vue from 'vue'
 
 const app = new Vue({

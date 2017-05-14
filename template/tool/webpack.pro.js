@@ -19,6 +19,19 @@ config.plugins = [
   }),
   new webpack.EnvironmentPlugin(['NODE_ENV']),
   new webpack.optimize.OccurrenceOrderPlugin(true),
+  new webpack.optimize.CommonsChunkPlugin({
+    name: 'vendor',
+    minChunks: (module, count) => {
+      return (
+        module.resource.endsWith('.js') &&
+        module.resource.includes('/node_modules/')
+      )
+    }
+  }),
+  new webpack.optimize.CommonsChunkPlugin({
+    name: 'manifest',
+    chunks: ['vendor']
+  }),
   new webpack.LoaderOptionsPlugin({
     minimize: true,
     debug: false
