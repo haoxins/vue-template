@@ -3,8 +3,7 @@
     ["env", {
       "targets": {
         "safari": 10.1,
-        "firefox": 52,
-        "chrome": 57,
+        "chrome": 59,
         "edge": 15
       },
       "exclude": [

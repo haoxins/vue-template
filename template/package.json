@@ -9,7 +9,7 @@
   "dependencies": {
     "rxjs": "5",
     "vue": "2",
-    "vue-duo": "0",
+    "vue-duo": "1",
     "vue-rx": "3"
   },
   "devDependencies": {
