@@ -3,6 +3,8 @@ const base = require('./webpack.base')
 const merge = require('webpack-merge')
 const webpack = require('webpack')
 
+const isArray = Array.isArray
+
 const config = merge(base, {
   devServer: {
     historyApiFallback: true,
@@ -10,7 +12,14 @@ const config = merge(base, {
   }
 })
 
-config.entry.hot = ['webpack-hot-middleware/client?reload=true']
+Object.keys(config.entry).forEach((key) => {
+  const a = isArray(config.entry[key]) ? config.entry[key] : [config.entry[key]]
+
+  config.entry[key] = [
+    'webpack-hot-middleware/client?reload=true',
+    ...a
+  ]
+})
 
 config.plugins = [
   ...(config.plugins || []),

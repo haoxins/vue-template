@@ -1,6 +1,6 @@
 
 <template>
-  <main>{{ msg }}</main>
+  <main>\{{ msg }}</main>
 </template>
 
 <script>
