@@ -5,6 +5,9 @@ const merge = require('webpack-merge')
 const webpack = require('webpack')
 
 const config = merge(base, {
+  output: {
+    filename: '[name].[chunkhash:18].js'
+  }
 })
 
 config.plugins = [
@@ -15,7 +18,7 @@ config.plugins = [
     }
   }),
   new ExtractTextPlugin({
-    filename: '[name].css'
+    filename: '[name].[contenthash:18].css'
   }),
   new webpack.EnvironmentPlugin(['NODE_ENV']),
   new webpack.optimize.OccurrenceOrderPlugin(true),
