@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "release": "node tool/release.js",
     "start": "node tool/server.js",
     "build": "node tool/build.js"
   },
