@@ -26,6 +26,7 @@ config.plugins = [
     name: 'vendor',
     minChunks: (module, count) => {
       return (
+        module.resource &&
         module.resource.endsWith('.js') &&
         module.resource.includes('/node_modules/')
       )
